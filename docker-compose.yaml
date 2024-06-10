@@ -1,0 +1,13 @@
+services:
+  dev-database:
+    image: postgres:15.6-alpine
+    ports:
+      - 5434:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=a123456
+      - POSTGRES_DB=testdb
+    networks:
+      - nestjs-network
+networks:
+  nestjs-network:
